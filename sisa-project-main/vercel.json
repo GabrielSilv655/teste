@@ -2,25 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "frontend/package.json",
+      "src": "sisa-project-main/frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
       }
     },
     {
-      "src": "backend/index.js",
+      "src": "sisa-project-main/backend/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/index.js"
+      "dest": "sisa-project-main/backend/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/build/$1"
+      "dest": "sisa-project-main/frontend/build/$1"
     }
   ]
 }
